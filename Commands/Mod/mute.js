@@ -30,7 +30,7 @@ module.exports = {
                 message.channel.send('Keine Muted-Rolle gefunden.. Die Rolle wird erstellt..!')
                 let muterole = await message.guild.roles.create({
                     name: "Muted",
-                    color: "DARK_RED",
+                    color: "DARK_VIVID_PINK",
                     permissions: [],
                 });
                 message.guild.channels.cache.filter(c => c.type === 'text').forEach(async (channel, id) => {
@@ -39,11 +39,7 @@ module.exports = {
                         ADD_REACTIONS: false,
                     });
                 });
-                return message.channel.send(
-                    new MessageEmbed()
-                    .setDescription('✅ | **Muted-Rolle** wurde erfolgreich erstellt.')
-                    .setColor("DARK_GREEN")
-                )
+                message.channel.send('✅ | **Muted-Rolle** wurde erfolgreich erstellt.')
             } catch (error) {
                 console.log(error)
             }
@@ -53,9 +49,8 @@ module.exports = {
 
         if (member.roles.highest.position >= message.member.roles.highest.position) return message.channel.send('Sie können dieser User nicht muten!!')
 
-
         await member.roles.add(role2)
-        message.channel.send(`${member.user.username} wurde für ${ms(ms(time))} gemutet.\nGrund: ${reason}`)
+        message.channel.send(`${member.user.username} wurde für ${ms(ms(time))} gemutet.\nGrund: ${reason}`);
 
         setTimeout(() => {
             member.roles.remove(role2)
