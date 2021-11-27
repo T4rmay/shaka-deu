@@ -4,6 +4,7 @@ const { Connect4 } = require('discord-gamecord')
 module.exports = {
   name: "connect4",
   description: "connect4 in discord!",
+  aliases: ['con4'],
   run: async (client, message, args) => {
           new Connect4({
         message: message,

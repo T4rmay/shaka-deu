@@ -3,6 +3,7 @@ const { QuickClick } = require("weky");
 module.exports = {
 	name: "quickclick",
 	description: "Quickly click a button",
+	aliases: ['qcli'],
 	run: async(client, message, args) => {
 		await QuickClick({
 			message: message,

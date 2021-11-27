@@ -3,6 +3,7 @@ const { MessageEmbed } = require('discord.js')
 module.exports = {
     name: "lettertile",
     description: "Play lettertile.io in Discord",
+    aliases: ['lett'],
     run: async(client, message, args) => {
 
       if (!message.member.voice.channelId) {

@@ -3,6 +3,7 @@ const { MessageEmbed } = require('discord.js')
 module.exports = {
     name: "doodlecrew",
     description: "Play DoodleCrew.io in Discord",
+    aliases: ['dlcrew'],
     run: async(client, message, args) => {
 
       if (!message.member.voice.channelId) {

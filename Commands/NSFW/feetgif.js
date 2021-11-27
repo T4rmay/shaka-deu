@@ -4,6 +4,7 @@ const neko = new client();
 
 module.exports = {
   name: "feetgif",
+  aliases: ['feet'],
   category: "NSFW",
   usage: "[command]",
   run: async (client, message, args) => {

@@ -3,6 +3,7 @@ const Discord = module.require("discord.js");
 module.exports = {
   name: "emojiid",
   description: "Get ID of emojis",
+  aliases: ['emoid'],
   run: async (client, message, args) => {
     const name = args.join(" ");
     const emoji = message.guild.emojis.cache.find((r) => r.name === name);

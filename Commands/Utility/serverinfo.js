@@ -5,6 +5,7 @@ module.exports = {
   name: "serverinfo",
   category: "utility",
   description: "Shows info about a server",
+  aliases: ['serin'],
   usage: "[command]",
   botPerms: ["EMBED_LINKS"],
   run: async (client, message, args) => {

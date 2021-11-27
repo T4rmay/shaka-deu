@@ -1,6 +1,6 @@
 {
   "name": "naneko",
-  "version": "v7.1.5-stable",
+  "version": "7.1.5",
   "description": "An Open Source discord bot with lots of features",
   "main": "index.js",
   "engines": {

@@ -6,6 +6,7 @@ module.exports = {
   description: "Flip some text",
   usage: "fliptext <text>",
   type: "Fun",
+  aliases: ['flit'],
   run: async (client, message, args) => {
     if (args.length < 1) {
       return message.channel.send("🚫 | Meister!! Bitte geben Sie einen Text zum Umblättern ein!");

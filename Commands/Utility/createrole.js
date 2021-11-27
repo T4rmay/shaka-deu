@@ -4,6 +4,7 @@ const toHex = require("colornames");
 module.exports = {
   name: "createrole",
   description: "Creates A new role in the guild",
+  aliases: ['creo'],
   userPerms: ["MANAGE_ROLES"],
   botPerms: ["EMBED_LINKS", "MANAGE_ROLES"],
   run: async (client, message, args) => {

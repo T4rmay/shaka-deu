@@ -3,7 +3,7 @@ const got = require("got"); //MAKE SURE TO INSTALL THE PACKAGE "GOT" ELSE THE CO
 
 module.exports = {
   name: "amazeme",
-  aliases: [],
+  aliases: ['azm'],
   category: "Fun",
   usage: "amazeme",
   description: "Returns random amazing fact/image.",

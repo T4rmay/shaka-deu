@@ -5,6 +5,7 @@ module.exports = {
     description: "View the dashboard for the required category.",
     botPerms: ["MANAGE_GUILD"],
     userPerms: ["ADMINISITRATOR"],
+    aliases: ['dsb'],
     run: async(client, message, args)=>{
         if (!args[0]){
             return message.channel.send(`🚫 | Meister!! Bitte geben Sie eine Option an! Verfügbare Optionen:\`\`\`js\nadmin\nwelcomer\nlogging\n\`\`\``);

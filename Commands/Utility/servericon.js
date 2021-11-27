@@ -3,6 +3,7 @@ const Discord = module.require("discord.js");
 module.exports = {
   name: "servericon",
   description: "Displays the Server Icon",
+  aliases: ['servi'],
   botPerms: ["EMBED_LINKS", "MANAGE_MESSAGES"],
   run: async (client, message, args) => {
     const server = message.guild;

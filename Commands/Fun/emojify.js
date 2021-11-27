@@ -23,7 +23,7 @@ const mapping = {
 
 module.exports = {
   name: "emojify",
-  aliases: [],
+  aliases: ['emofy', 'ejify', 'moji'],
   category: "Fun",
   usage: "emojify <text>",
   description: "Gibt bereitgestellten Text in Emojify-Form (Emotes) zurück.",

@@ -3,6 +3,7 @@ const { MessageEmbed } = require('discord.js')
 module.exports = {
     name: "awkword",
     description: "Spiele awkword.io in Discord",
+    aliases: ['awkw'],
     run: async(client, message, args) => {
 
       if (!message.member.voice.channelId) {
@@ -18,5 +19,5 @@ module.exports = {
             
             return message.channel.send({ embeds: [embed] });
         });
-    }
-}
+    },
+};

@@ -6,6 +6,7 @@ module.exports = {
   name: "tempmute",
   category: "info",
   description: "Returns latency and API ping",
+  aliases: ['tempm', 'temut'],
   userPerms: ["MANAGE_ROLES"],
   botPerms: ["EMBED_LINKS", "MANAGE_ROLES"],
   run: async (client, message, args) => {

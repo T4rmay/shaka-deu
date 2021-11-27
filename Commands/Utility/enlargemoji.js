@@ -7,6 +7,7 @@ module.exports = {
   name: "enlargemoji",
   category: "fun",
   description: "Converting Server emoji to PNG/GIF!",
+  aliases: ['enlem'],
   botPerms: ["EMBED_LINKS"],
   run: async (client, message, args) => {
     const authoravatar = message.author.avatarURL();

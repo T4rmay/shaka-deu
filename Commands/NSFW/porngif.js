@@ -6,6 +6,7 @@ const nsfw = new NSFW();
 module.exports = {
   name: "porngif",
   description: "Sends porn gifs.",
+  aliases: ['porn'],
   run: async (client, message, args) => {
     var errMessage = "This is not an NSFW Channel";
     if (!message.channel.nsfw) {

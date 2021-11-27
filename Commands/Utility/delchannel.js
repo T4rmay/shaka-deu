@@ -3,6 +3,7 @@ const Discord = module.require("discord.js");
 module.exports = {
   name: "delchannel",
   description: "Delete Channels From your Server",
+  aliases: ['removech', 'delch'],
   userPerms: ["MANAGE_CHANNELS"],
   botPerms: ["EMBED_LINKS", "MANAGE_CHANNELS"],
   run: async (client, message, args) => {

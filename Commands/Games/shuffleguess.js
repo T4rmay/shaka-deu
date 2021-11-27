@@ -3,6 +3,7 @@ const { ShuffleGuess } = require("weky");
 module.exports = {
 	name: "shuffleguess",
 	description: "Shuffle a word and guess it.",
+	aliases: ['sfle'],
 	run: async(client, message, args)=>{
 		await ShuffleGuess({
 			message: message,

@@ -3,7 +3,7 @@ const prefixModel = require("../../database/guildData/welcome");
 module.exports = {
   name: "joinchannel",
   description: "Change the welcome channel per server!",
-  aliases: ["jchannel", "welcome"],
+  aliases: ["jchannel", "welcome", "jch"],
   userPerms: ["MANAGE_CHANNELS"],
   botPerms: ["MANAGE_CHANNELS"],
   run: async (client, message, args) => {

@@ -3,6 +3,7 @@ const { NeverHaveIEver } = require("weky");
 module.exports = {
 	name: "neverhaveiever",
 	description: "Never have I ever",
+	aliases: ['nevei'],
 	run: async(client, message, args) => {
 		await NeverHaveIEver({
 			message: message,

@@ -4,9 +4,10 @@ const malScraper = require('mal-scraper');
 module.exports = {
   name: "animesearch",
   category: "utility",
-description: "Get info about an anime",
-usage: "[command | Anime]",
-run: async (client, message, args) => {
+  description: "Get info about an anime",
+  aliases: ['anise'],
+  usage: "[command | Anime]",
+  run: async (client, message, args) => {
         const search = `${args}`;
         if(!search)
         return message.reply('🚫 | Meister! Bitte fügen Sie eine Suchabfrage hinzu!!');

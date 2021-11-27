@@ -3,7 +3,7 @@ const fetch = require('node-fetch');
 
 module.exports = {
   name: "trumptweet",
-  aliases: ["trump"],
+  aliases: ["trump", "trtwe"],
   usage: "trumptweet <message>",
   description:
     "Display's a custom tweet from Donald Trump with the message provided.",

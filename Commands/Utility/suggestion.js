@@ -3,6 +3,7 @@ const Discord = module.require("discord.js");
 module.exports = {
   name: "suggestion",
   description: "Anything",
+  aliases: ['suggest', 'sugt'],
   botPerms: ["EMBED_LINKS", "MANAGE_MESSAGES", "ADD_REACTIONS"],
   run: async (client, message, args) => {
     const msg = args.join(" ");

@@ -3,6 +3,7 @@ const Discord = module.require("discord.js");
 module.exports = {
   name: "8ball",
   description: "Tells you a fortune",
+  aliases: ['eightball', 'eigl'],
   run: async (client, message, args) => {
     if (args.length == 0)
       return message.channel

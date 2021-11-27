@@ -6,6 +6,7 @@ require("dotenv");
 module.exports = {
   name: "botservers",
   description: "Check what Servers the bot is in!",
+  aliases: ['botser', 'bserv'],
   botPerms: ["USE_EXTERNAL_EMOJIS"],
   run: async (client, message, args) => {
     try {

@@ -3,6 +3,7 @@ const Discord = module.require("discord.js");
 module.exports = {
   name: "amiajoke",
   description: "Another fun command",
+  aliases: ['amje'],
   botPerms: ["EMBED_LINKS"],
   run: async (client, message, args) => {
     let avatar = message.mentions.users.size

@@ -3,6 +3,7 @@ const Discord = module.require("discord.js");
 module.exports = {
   name: "greentext",
   description: "Colors your text with green colour",
+  aliases: ['gtext'],
   run: async (client, message, args) => {
     const text = args.join(" ");
     if (!text) {

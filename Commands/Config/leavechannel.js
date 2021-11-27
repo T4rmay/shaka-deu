@@ -5,6 +5,7 @@ module.exports = {
   description: "Change the goodbye channel per server!",
   userPerms: ["MANAGE_CHANNELS"],
   botPerms: ["MANAGE_CHANNELS"],
+  aliases: ['lech', 'byec'],
   run: async (client, message, args) => {
     if (!args[0]) {
       return message.channel.send("`Usage: =leavechannel <#channel|off>`");

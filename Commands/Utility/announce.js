@@ -3,6 +3,7 @@ const Discord = require("discord.js");
 module.exports = {
   name: "announce",
   description: "Make an Announcemnet in your Server",
+  aliases: ['anno'],
   userPerms: ["MANAGE_MESSAGES"],
   botPerms: ["EMBED_LINKS", "MANAGE_MESSAGES"],
   run: async (client, message, args) => {

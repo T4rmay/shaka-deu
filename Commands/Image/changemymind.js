@@ -5,6 +5,7 @@ const Discord = module.require("discord.js");
 module.exports = {
   name: "changemymind",
   description: "Image Manipulation Command",
+  aliases: ['cmmi'],
   botPerms: ["ATTTACH_FILES"],
   run: async (client, message, args) => {
     const text = args.join("+");

@@ -3,6 +3,7 @@ const Discord = module.require("discord.js");
 module.exports = {
   name: "vaportext",
   description: "Fun Command",
+  aliases: ['vatex'],
   run: async (client, message, args) => {
     if (!args.length) {
       return message.channel.send("🚫 | Meister, Sie müssen etwas Text eingeben!!");

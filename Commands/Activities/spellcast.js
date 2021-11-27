@@ -3,6 +3,7 @@ const { MessageEmbed } = require('discord.js')
 module.exports = {
     name: "spellcast",
     description: "Play spellcast.io in Discord",
+    aliases: ['spellc', 'scas'],
     run: async(client, message, args) => {
 
       if (!message.member.voice.channelId) {

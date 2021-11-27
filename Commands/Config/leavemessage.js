@@ -4,6 +4,7 @@ module.exports = {
   name: "leavemessage",
   description: "Change the leave message per server!",
   userPerms: ["MANAGE_CHANNELS"],
+  aliases: ['lemsg', 'byemsg'],
   run: async (client, message, args) => {
     const text = args.join(" ");
     if (!args[0]) {

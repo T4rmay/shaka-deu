@@ -1,6 +1,6 @@
 module.exports = {
 	name: 'football',
-	aliases: [],
+	aliases: ['fb'],
 	run: async (client, message, args) => {
 		const positions = {
 			left: '_ _                   🥅🥅🥅\n_ _                   🕴️\n      \n_ _                         ⚽',

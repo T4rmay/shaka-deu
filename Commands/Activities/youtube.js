@@ -3,6 +3,7 @@ const { MessageEmbed } = require('discord.js')
 module.exports = {
     name: "youtube",
     description: "Watch Youtube in Discord!",
+    aliases: ['youtube-together', 'together', 'ytg'],
     run: async(client, message, args) => {
 
       if (!message.member.voice.channelId) {

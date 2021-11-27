@@ -4,6 +4,7 @@ module.exports = {
   name: "antilink",
   description: "Setup antilink per server!",
   userPerms: ["MANAGE_GUILD"],
+  aliases: ['anli'],
   run: async (client, message, args) => {
     if (!args[0]) {
       return message.channel.send(

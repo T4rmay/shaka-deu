@@ -13,6 +13,7 @@ require("moment-duration-format");
 module.exports = {
   name: "botinfo",
   description: "Shows the bot info",
+  aliases: ['binf'],
   botPerms: ["EMBED_LINKS"],
   run: async (client, message, args) => {
     const duration = moment

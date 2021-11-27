@@ -9,6 +9,7 @@ module.exports = {
   name: "danbooru",
   category: "NSFW",
   description: "Searches danbooru image board",
+  aliases: ['danbr'],
   botPerms: ["EMBED_LINKS"],
   run: async (bot, message, args, level) => {
     //command

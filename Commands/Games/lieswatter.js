@@ -3,6 +3,7 @@ const { LieSwatter } = require("weky");
 module.exports = {
 	name: "lieswatter",
 	description: "Is it a lie?",
+	aliases: ['liwa'],
 	run: async(client, message, args)=>{
 		await LieSwatter({
 			message: message,

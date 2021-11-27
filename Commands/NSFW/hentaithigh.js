@@ -6,6 +6,7 @@ const nsfw = new NSFW();
 module.exports = {
   name: "hentaithigh",
   description: "Sends hentai thigh pictures.",
+  aliases: ['henhi', 'henth'],
   run: async (client, message, args) => {
     var errMessage = "This is not an NSFW Channel";
     if (!message.channel.nsfw) {

@@ -3,6 +3,7 @@ const { GuessThePokemon } = require("weky");
 module.exports = {
 	name: "guesspokemon",
 	description: "Guess the pokemon",
+	aliases: ['gpoke'],
 	run: async(client, message, args)=>{
 		await GuessThePokemon({
 			message: message,

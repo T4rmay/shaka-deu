@@ -4,6 +4,7 @@ module.exports = {
   name: "catsay",
   description: "Make the cat say your message",
   botPerms: ["ATTTACH_FILES", "MANAGE_MESSAGES"],
+  aliases: ['cattell', 'csay'],
   run: async (client, message, args) => {
     message.delete();
     const state = "enabled";

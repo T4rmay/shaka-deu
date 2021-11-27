@@ -5,6 +5,7 @@ const cooldown = new Set();
 module.exports = {
   name: "textimage",
   description: "Another Fun Command",
+  aliases: ['teima'],
   botPerms: ["ATTTACH_FILES", "MANAGE_MESSAGES"],
   run: async (client, message, args) => {
     if (message.channel.type === "dm") return;

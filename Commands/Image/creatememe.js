@@ -3,6 +3,7 @@ const Discord = module.require("discord.js");
 module.exports = {
   name: "creatememe",
   description: "Create Custom Memes",
+  aliases: ['crmm'],
   botPerms: ["ATTTACH_FILES", "MANAGE_MESSAGES"],
   run: async (client, message, args) => {
     message.delete();

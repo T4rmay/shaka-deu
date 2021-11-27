@@ -5,6 +5,7 @@ const cooldown = new Set();
 module.exports = {
   name: "challenge",
   description: "Another Fun Command",
+  aliases: ['chlg'],
   botPerms: ["ATTTACH_FILES"],
   run: async (client, message, args) => {
     if (message.channel.type === "dm") return;

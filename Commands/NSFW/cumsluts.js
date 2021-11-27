@@ -5,6 +5,7 @@ module.exports = {
   name: "cumsluts",
   category: "NSFW",
   description: "Sends random cumsluts",
+  aliases: ['cums'],
   usage: "[command]",
   botPerms: ["EMBED_LINKS"],
   run: async (client, message, args) => {

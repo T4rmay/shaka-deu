@@ -1,6 +1,6 @@
 module.exports = {
 	name: 'catchthefish',
-	aliases: [],
+	aliases: ['catchf', 'ctfi'],
   run: async (client, message, args) => {
 		const positions = {
 			safe: '_ _                          :fish:\n            _ _              :hand_splayed:\n            _ _              :cat:',
