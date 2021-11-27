@@ -9,7 +9,7 @@ module.exports = async(thread) => {
     if (!data) return;
 
     const embed = new MessageEmbed()
-    .setTitle('Thread Deleted')
+    .setTitle('**Thread Deleted**')
     .setDescription(`
 Name: ${thread.name}
 ID: ${thread.id}
@@ -20,5 +20,5 @@ Parent Channel: ${thread.parent.name}`)
     .setColor("RED")
     .setTimestamp()
 
-    thread.guild.channels.cache.get(data.ChannelID).send({ embeds: [embed] })
-}
+    thread.guild.channels.cache.get(data.ChannelID).send({ embeds: [embed] });
+};

@@ -36,22 +36,22 @@ module.exports = {
                 .addOptions([
                     {
                         label: "Antilink",
-                        description: "Enable or Disable Antilink System!",
+                        description: "Antilink-System Aktivieren oder Deaktivieren!",
                         value: "antilink",
                     },
                     {
                         label: "AutoRole",
-                        description: "Enable or Disable AutoRole System!",
+                        description: "AutoRole-System Aktivieren oder Deaktivieren!",
                         value: "autorole",
                     },
                     {
                         label: "AutoMod",
-                        description: "Enable or Disable AutoMod System!",
+                        description: "AutoMod-System Aktivieren oder Deaktivieren!",
                         value: "automod",
                     },
                     {
                         label: "Prefix",
-                        description: "Change the bot's prefix for your server!",
+                        description: "Das Prefix auf Ihren Server ändern!",
                         value: "prefix"
                     }
                 ])

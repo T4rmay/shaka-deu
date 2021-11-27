@@ -1,5 +1,5 @@
-const { MessageEmbed } = require('discord.js')
-const channelData = require('../../database/guildData/channelupdates')
+const { MessageEmbed } = require('discord.js');
+const channelData = require('../../database/guildData/channelupdates');
 
 module.exports = async(oldThread, newThread) => {
     const data = await channelData.findOne({
@@ -14,7 +14,7 @@ module.exports = async(oldThread, newThread) => {
         .setColor("GREEN")
         .setTimestamp()
 
-        newThread.guild.channels.cache.get(data.ChannelID).send({embeds: [nameEmbed]})
+        newThread.guild.channels.cache.get(data.ChannelID).send({embeds: [nameEmbed]});
 
     } else if (oldThread.rateLimitPerUser !== newThread.rateLimitPerUser) {
         let rateLmitEmbed = new MessageEmbed()
@@ -23,7 +23,7 @@ module.exports = async(oldThread, newThread) => {
         .setColor("GREEN")
         .setTimestamp()
 
-        newThread.guild.channels.cache.get(data.ChannelID).send({embeds: [rateLmitEmbed]})
+        newThread.guild.channels.cache.get(data.ChannelID).send({embeds: [rateLmitEmbed]});
     } else if (oldThread.archived !== newThread.archived) {
         let archivedEmbed = new MessageEmbed()
         .setTitle(`${oldThread.name}`)
@@ -31,7 +31,7 @@ module.exports = async(oldThread, newThread) => {
         .setColor("GREEN")
         .setTimestamp()
 
-        newThread.guild.channels.cache.get(data.ChannelID).send({embeds: [archivedEmbed]})
-    }
+        newThread.guild.channels.cache.get(data.ChannelID).send({embeds: [archivedEmbed]});
+    };
 
-}
+};

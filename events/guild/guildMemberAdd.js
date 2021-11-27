@@ -9,11 +9,11 @@ module.exports = async (member) => {
     if (!data) return;
 
     const embed = new MessageEmbed()
-    .setTitle('Member Joined')
-    .setDescription(`User: ${member.user.tag} (${member})\nUser ID: ${member.id}\nAcc. Created: ${member.user.createdAt}\nServer Mmebr Count: ${member.guild.memberCount}`)
+    .setTitle('**Member Joined**')
+    .setDescription(`User: ${member.user.tag} (${member})\nUser ID: ${member.id}\nAcc. Created: ${member.user.createdAt}\nServer Member Count: ${member.guild.memberCount}`)
     .setColor("GREEN")
     .setTimestamp()
-    .setThumbnail(`${member.user.avatarURL}`)
+    .setThumbnail(`${member.user.avatarURL}`);
 
-    member.guild.channels.cache.get(data.ChannelID).send({ embeds: [embed]})
-}
+    member.guild.channels.cache.get(data.ChannelID).send({ embeds: [embed]});
+};

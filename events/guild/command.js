@@ -2,6 +2,7 @@ const prefixModel = require("../../database/guildData/prefix");
 const escapeRegex = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 const { DEFAULT_PREFIX, OWNER_ID } = require('../../config')
 const { Collection } = require("discord.js")
+
 module.exports = async (message, cooldowns) => {
 
   let client = message.client;
@@ -48,25 +49,23 @@ module.exports = async (message, cooldowns) => {
     // ownerOnly thing
     if(command.ownerOnly === true) {
       if(!message.author.id === OWNER_ID) {
-        return message.reply('This command is Owner only!')
+        return message.reply('dieser Befehl ist leider nur für Owner verfügbar!')
       }
     }
     // user permissions handler
   if (!message.member.permissions.has(command.userPerms || [])) {
     if(command.userPermError === null || command.userPermError === undefined) {
-      return message.reply(`You need  \`${command.userPerms}\` permissions to use this comand!`);
+      return message.reply(`Sie brauchen  \`${command.userPerms}\` Rechte, um dieser Befehl verwenden zu können!!`);
     } else {
       return message.reply(command.userPermError)
     }
   }
 
-
-
   // bot permissions handler
   if (!message.guild.me.permissions.has(command.botPerms || [])) {
   if(command.botPermError === null || command.botPermError === undefined) {
     return message.reply(
-      `Ups :/  I need \`${command.botPerms}\` premission|s to run this command correctly`
+      `Ups! :/  Ich brauche \`${command.botPerms}\` Rechte, um dieser Befehl vollständig ausführen zu können!!`
     );
  } else {
     return message.reply(command.botPermError)
@@ -76,13 +75,14 @@ module.exports = async (message, cooldowns) => {
   if(command.guildOnly === true) {
     console.log(message.channel.type)
     if(message.channel.type === 'DM' || message.channel.type === 'GROUP_DM') {
-      return message.reply('This command is Server only!')
+      return message.reply('dieser Befehl kann nur auf dem Server verwendet werden!!')
     }
   }
     //nsfw thingy
     if(command.nsfw === true) {
       if(message.channel.nsfw === false) {
-        return message.reply('This command is NSFW only, mark the channel as nsfw for this command to work!')
+        return message.reply(
+          'es tut mir leid, aber Sie können dieser Befehl nicht hier benutzen! Dieser Channel muss NSFW-Channel sein, sonst funktioniert dieser Befehl nicht!')
       }
     }
   //min args and max args thing
@@ -96,11 +96,6 @@ module.exports = async (message, cooldowns) => {
           return message.reply(command.expectedArgs)
           
         }
-
-
-
-
-  
 
   // cooldowns
   if (!cooldowns.has(command.name)) {
@@ -117,9 +112,9 @@ module.exports = async (message, cooldowns) => {
     if (now < expirationTime) {
       const timeLeft = (expirationTime - now) / 1000;
       return message.reply(
-        `please wait ${timeLeft.toFixed(
+        `bitte warten Sie noch ${timeLeft.toFixed(
           1
-        )} more second(s) before reusing the \`${command.name}\` command.`
+        )} more second(s) before reusing the \`${command.name}\` Command.`
       );
     }
   }
@@ -132,7 +127,7 @@ module.exports = async (message, cooldowns) => {
   } catch (error) {
     console.error(error);
     let embed2000 = new MessageEmbed()
-      .setDescription("There was an error executing that command.")
+      .setDescription("🚫 | Meister, für dieser Befehl ist grade ein Problem aufgetreten!! Mein Meister **꧁Saito꧂#6248** versucht das noch zu beheben.")
       .setColor("BLUE");
     message.channel.send({ embeds: [embed2000] }).catch(console.error);
   }

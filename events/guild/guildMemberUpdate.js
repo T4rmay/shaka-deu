@@ -13,12 +13,12 @@ module.exports = async(oldMember, newMember) => {
         let newNickname = newMember.nickname ? newMember.nickname : newMember.user.username
         let nicknameEmbed = new MessageEmbed()
         .setTitle(`${newMember.user.tag}`)
-        .addField('User Nickname Changed', `${oldNickname} => ${newNickname}`)
+        .addField('User Nickname Geändert:', `${oldNickname} => ${newNickname}`)
         .setColor("GREEN")
         .setTimestamp()
-        .setThumbnail(`${newMember.user.avatarURL()}`)
+        .setThumbnail(`${newMember.user.avatarURL()}`);
 
-        newMember.guild.channels.cache.get(data.ChannelID).send({ embeds: [nicknameEmbed] })
+        newMember.guild.channels.cache.get(data.ChannelID).send({ embeds: [nicknameEmbed] });
 
     } else if (newMember.user.username !== oldMember.user.username) {
 
@@ -27,12 +27,12 @@ module.exports = async(oldMember, newMember) => {
 
         let usernameEmbed = new MessageEmbed()
         .setTitle(`${newMember.user.tag}`)
-        .addField('User Username Changed', `${oldusername} => ${newusername}`)
+        .addField('User Username Geändert:', `${oldusername} => ${newusername}`)
         .setColor("GREEN")
         .setTimestamp()
-        .setThumbnail(`${newMember.user.avatarURL()}`)
+        .setThumbnail(`${newMember.user.avatarURL()}`);
 
-        newMember.guild.channels.cache.get(data.ChannelID).send({ embeds: [usernameEmbed] })
+        newMember.guild.channels.cache.get(data.ChannelID).send({ embeds: [usernameEmbed] });
 
     } else if (newMember.user.avatarURL() !== oldMember.user.avatarURL()) {
 
@@ -41,14 +41,14 @@ module.exports = async(oldMember, newMember) => {
 
         let avatarEmbed = new MessageEmbed()
         .setTitle(`${newMember.user.tag}`)
-        .addField('User Avatar Changed', `${oldavatar} => ${newavatar}`)
+        .addField('User Avatar Geändert:', `${oldavatar} => ${newavatar}`)
         .setColor("GREEN")
         .setTimestamp()
-        .setThumbnail(`${newMember.user.avatarURL()}`)
+        .setThumbnail(`${newMember.user.avatarURL()}`);
 
-        newMember.guild.channels.cache.get(data.ChannelID).send({ embeds: [avatarEmbed] })
+        newMember.guild.channels.cache.get(data.ChannelID).send({ embeds: [avatarEmbed] });
 
     } else {
         return;
-    }
-}
+    };
+};

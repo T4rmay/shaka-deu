@@ -2,17 +2,19 @@ const channelData = require('../../database/guildData/channelupdates')
 const { MessageEmbed } = require('discord.js')
 
 module.exports = async(channel) => {
-    const data = await channelData.findOne({
-        GuildID: channel.guild.id,
-    })
+    const data = await channelData.findOne(
+        {
+            GuildID: channel.guild.id,
+        },
+    );
 
     if (!data) return;
 
     const embed = new MessageEmbed()
-    .setTitle("Channel Deleted")
+    .setTitle("**NEW: Channel Deleted**")
     .setDescription(`Channel Name: ${channel.name}\nChannel ID: ${channel.id}\nChannel Type: ${channel.type}`)
     .setColor("GREEN")
-    .setTimestamp()
+    .setTimestamp();
 
-    channel.guild.channels.cache.get(data.ChannelID).send({ embeds: [embed] })
-}
+    channel.guild.channels.cache.get(data.ChannelID).send({ embeds: [embed] });
+};

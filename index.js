@@ -5,11 +5,11 @@ const { Client, Collection, Intents, MessageEmbed } = require("discord.js");
 const { DEFAULT_PREFIX, BOT_TOKEN, ERROR_LOGS_CHANNEL, ALEXFLIPNOTE_API_KEY, YT_COOKIE } = require("./config.json");
 const { loadCommands } = require("./handler/loadCommands");
 const { loadEvents } = require("./handler/loadEvents");
-const { loadSlashCommands } = require("./handler/loadSlashCommands")
+const { loadSlashCommands } = require("./handler/loadSlashCommands");
 const { loadPlayerEvents } = require("./handler/loadPlayerEvents");
-const { DiscordTogether } = require('discord-together')
-const { Player } = require('discord-player')
-const Enmap = require("enmap")
+const { DiscordTogether } = require('discord-together');
+const { Player } = require('discord-player');
+const Enmap = require("enmap");
 
 const client = new Client({
   allowedMentions: { parse: ["users", "roles"] },
@@ -23,15 +23,16 @@ const client = new Client({
     Intents.FLAGS.GUILD_INVITES,
     Intents.FLAGS.GUILD_BANS,
     Intents.FLAGS.GUILD_PRESENCES,
+    Intents.FLAGS.GUILD_EMOJIS_AND_STICKERS,
   ],
 });
-const { checkValid } = require("./functions/validation/checkValid")
-const Embeds = require("./functions/embeds/Embeds")
-const Logger = require("./functions/Logger/Logger")
-const Util = require("./functions/util/Util")
+const { checkValid } = require("./functions/validation/checkValid");
+const Embeds = require("./functions/embeds/Embeds");
+const Logger = require("./functions/Logger/Logger");
+const Util = require("./functions/util/Util");
 
-const alexClient = require("alexflipnote.js")
-client.images = new alexClient(ALEXFLIPNOTE_API_KEY)
+const alexClient = require("alexflipnote.js");
+client.images = new alexClient(ALEXFLIPNOTE_API_KEY);
 client.discordTogether = new DiscordTogether(client);
 client.commands = new Collection();
 client.slash = new Collection();
@@ -53,8 +54,8 @@ const player = new Player(client, {
     requestOptions: {
       headers: {
         cookie: Cookie,
-      }
-    }
+      },
+    },
   },
 })
 

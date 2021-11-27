@@ -1,49 +1,52 @@
-const byeData = require("../../database/guildData/leavechannel");
-const byemsg = require("../../database/guildData/leavemessage");
-const { MessageEmbed } = require('discord.js')
+const byeData = require('../../database/guildData/leavechannel');
+const byemsg = require('../../database/guildData/leavemessage');
+const { MessageEmbed } = require('discord.js');
 
 module.exports = async (member) => {
- const avatar = member.user.avatarURL;
+  const avatar = member.user.avatarURL; // wenn nicht klappt, mit Klammer --> member.user.avatarURL();
+  const data = await byeData.findOne(
+    {
+      GuildID: member.guild.id,
+    },
+  );
 
- const data = await byeData.findOne({
-   GuildID: member.guild.id,
- });
- if (data) {
-   const data2 = await byemsg.findOne({
-     GuildID: member.guild.id,
-   });
-   if (data2) {
-     var leavemessage = data2.ByeMsg;
+  if (data) {
+    const data2 = await byemsg.findOne(
+      {
+        GuildID: member.guild.id,
+      },
+    );
 
-     leavemessage = leavemessage.replace("{user.mention}", `${member}`);
-     leavemessage = leavemessage.replace("{user.name}", `${member.user.tag}`);
-     leavemessage = leavemessage.replace("{server}", `${member.guild.name}`);
-     leavemessage = leavemessage.replace(
-       "{membercount}",
-       `${member.guild.memberCount}`
-     );
+    if (data2) {
+      var leavemessage = data2.ByeMsg;
 
-     let embed = new MessageEmbed()
-       .setDescription(`${leavemessage}`)
-       .setColor("GREEN");
+      leavemessage = leavemessage.replace(`${user.mention}`, `${member}`);
+      leavemessage = leavemessage.replace(`${user.name}`, `${member.user.tag}`);
+      leavemessage = leavemessage.replace(`${server}`, `${member.guild.name}`);
+      leavemessage = leavemessage.replace(`${memberCount}`, `${member.guild.memberCount}`);
 
-     let channel = data.Bye;
+      let embed = new MessageEmbed()
+        .setDescription(`${leavemessage}`)
+        .setColor('RANDOM');
 
-     member.guild.channels.cache.get(channel).send({embeds: [embed]});
-   } else if (!data2) {
-     let embed2 = new MessageEmbed()
-       .setTitle("Goodbye")
-       .setThumbnail(member.user.avatarURL())
-       .setDescription(
-         `**${member.user.tag}** just left the server! We hope they return back soon!`
-       )
-       .setFooter(`We now have ${member.guild.memberCount} members!`)
-       .setThumbnail(member.user.avatarURL())
-       .setColor("GREEN");
+      let channel = data.Bye;
 
-     let byechannel = data.Bye;
+      member.guild.channels.cache.get(channel).send({ embeds: [embed] });
+    } else if (!data2) {
+      let embed2 = new MessageEmbed()
+        .setTitle("**NEWS LEAVE: Goodbye!**")
+        .setThumbnail(member.user.avatarURL())
+        .setDescription(`**${member.user.tag}** hat leider den Server verlassen!!\nHabt ihr vielleicht eine Ahnung oder Ideen, wie wir unseren Server 
+        Interessante, Besser gestalten können, damit die Users uns nicht verlassen?? Falls ja, dann hau mal raus. Wir freuen uns immer auf neue Ideen :) 
+        Der Channel dafür werden wir für euch bereit stellen.\n
+        Wir hoffen sehr, dass er/sie uns bald wieder besuchen wird! :pleading_face:`)
+        .setFooter(`Wir haben jetzt noch ${member.guild.memberCount} Members!`)
+        .setTimestamp()
+        .setColor("RANDOM");
 
-     member.guild.channels.cache.get(byechannel).send({embeds: [embed2]});
-   }
- }
+      let byeChannel = data.Bye;
+
+      member.guild.channels.cache.get(byeChannel).send({ embeds: [embed2] });
+    };
+  };
 };

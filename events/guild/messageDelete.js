@@ -1,5 +1,5 @@
-const messageData = require('../../database/guildData/messagelogs')
-const { MessageEmbed } = require('discord.js')
+const messageData = require('../../database/guildData/messagelogs');
+const { MessageEmbed } = require('discord.js');
 
 module.exports = async(message) => {
     const data = await messageData.findOne({
@@ -11,11 +11,11 @@ module.exports = async(message) => {
     const channel = data.ChannelID
 
     const embed = new MessageEmbed()
-    .setTitle("Message Deleted")
-    .setDescription(`${message.author.username}'s messages was deleted in ${message.channel}`)
+    .setTitle("**Message Deleted**")
+    .setDescription(`${message.author.username}'s Messages wurden in ${message.channel} gelöscht!!`)
     .addField('Message Content', `${message.content}`)
     .setColor("GREEN")
     .setTimestamp()
 
-    message.guild.channels.cache.get(data.ChannelID).send({ embeds: [embed] })
-}
+    message.guild.channels.cache.get(data.ChannelID).send({ embeds: [embed] });
+};

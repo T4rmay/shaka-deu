@@ -1,5 +1,5 @@
-const { MessageEmbed } = require('discord.js')
-const channelData = require('../../database/guildData/channelupdates')
+const { MessageEmbed } = require('discord.js');
+const channelData = require('../../database/guildData/channelupdates');
 
 module.exports = async(oldThreadMembers, newThreadMembers) => {
     const data = await channelData.findOne({
@@ -14,7 +14,7 @@ module.exports = async(oldThreadMembers, newThreadMembers) => {
         .setColor("GREEN")
         .setTimestamp()
 
-        newThread.guild.channels.cache.get(data.ChannelID).send({embeds: [memberJoinEmbed]})
+        newThread.guild.channels.cache.get(data.ChannelID).send({embeds: [memberJoinEmbed]});
 
     } else if (oldThreadMembers.size > newThreadMembers.size) {
         let memberLeftEmbed = new MessageEmbed()
@@ -23,7 +23,6 @@ module.exports = async(oldThreadMembers, newThreadMembers) => {
         .setColor("GREEN")
         .setTimestamp()
 
-        newThread.guild.channels.cache.get(data.ChannelID).send({embeds: [memberLeftEmbed]})
-    }
-
-}
+        newThread.guild.channels.cache.get(data.ChannelID).send({embeds: [memberLeftEmbed]});
+    };
+};

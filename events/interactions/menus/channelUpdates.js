@@ -1,21 +1,21 @@
 const { IntegrationApplication } = require("discord.js");
-const channelData = require("../../../database/guildData/channelupdates")
+const channelData = require("../../../database/guildData/channelupdates");
 
 module.exports = async(interaction, client) => {
     if (!interaction.isSelectMenu()) return;
 
-    let msg = await interaction.channel.messages.fetch(interaction.message.id)
+    let msg = await interaction.channel.messages.fetch(interaction.message.id);
 
     if (interaction.values[0] === "channel_logs") {
 
-        await interaction.deferUpdate()
+        await interaction.deferUpdate();
         
         const data = await channelData.findOne({
             GuildID: interaction.guild.id
-        })
+        });
 
         if (!data) {
-            await msg.edit("Please send the **CHANNEL ID** to be setup for Channel Update Logs")
+            await msg.edit("Bitte senden Sie die **CHANNEL ID**, um die Kanalaktualisierungsprotokolle einzurichten.")
 
             const filter = (m) => m.author.id === interaction.member.id
 
@@ -28,7 +28,7 @@ module.exports = async(interaction, client) => {
 
                 let channel = interaction.guild.channels.cache.get(channelID)
 
-                if (!channel) return msg.edit("Couldn't find that channel!")
+                if (!channel) return msg.edit("Konnte diesen Kanal nicht finden!")
 
                 let newData = new channelData({
                     ChannelID: channelID,
@@ -39,7 +39,7 @@ module.exports = async(interaction, client) => {
 
                 await collector.stop()
     
-                return msg.edit(`Channel updates will be logged in ${interaction.guild.channels.cache.get(channelID)}`)
+                return msg.edit(`Channel-Updates werden  ${interaction.guild.channels.cache.get(channelID)}`)
             })
 
             collector.on('end', async(collected, returnValue) => {

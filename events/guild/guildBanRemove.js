@@ -9,10 +9,10 @@ module.exports = async(member) => {
     if (!data) return;
 
     const embed = new MessageEmbed()
-    .setTitle('Member Unbanned')
+    .setTitle('**Member Unbanned**')
     .setDescription(`User: ${member.user.tag} (${member})\nUser ID: ${member.id}\nAcc Created On: ${member.user.createdAt}`)
     .setColor("GREEN")
     .setTimestamp()
 
-    member.guild.channels.cache.get(data.ChannelID).send({ embeds: [embed] })
-}
+    member.guild.channels.cache.get(data.ChannelID).send({ embeds: [embed] });
+};
