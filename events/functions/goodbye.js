@@ -20,10 +20,10 @@ module.exports = async (member) => {
     if (data2) {
       var leavemessage = data2.ByeMsg;
 
-      leavemessage = leavemessage.replace(`${user.mention}`, `${member}`);
-      leavemessage = leavemessage.replace(`${user.name}`, `${member.user.tag}`);
-      leavemessage = leavemessage.replace(`${server}`, `${member.guild.name}`);
-      leavemessage = leavemessage.replace(`${memberCount}`, `${member.guild.memberCount}`);
+      leavemessage = leavemessage.replace("{user.mention}", `${member}`);
+      leavemessage = leavemessage.replace("{user.name}", `${member.user.tag}`);
+      leavemessage = leavemessage.replace("{server}", `${member.guild.name}`);
+      leavemessage = leavemessage.replace("{memberCount}", `${member.guild.memberCount}`);
 
       let embed = new MessageEmbed()
         .setDescription(`${leavemessage}`)

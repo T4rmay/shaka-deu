@@ -20,10 +20,10 @@ module.exports = async (member) => {
     if (data2) {
       var joinmessage = data2.JoinMsg;
 
-      joinmessage = joinmessage.replace(`${user.mention}`, `${member}`);
-      joinmessage = joinmessage.replace(`${user.name}`, `${member.user.tag}`);
-      joinmessage = joinmessage.replace(`${server}`, `${member.guild.name}`);
-      joinmessage = joinmessage.replace(`${memberCount}`, `${member.guild.memberCount}`);
+      joinmessage = joinmessage.replace("{user.mention}", `${member}`);
+      joinmessage = joinmessage.replace("{user.name}", `${member.user.tag}`);
+      joinmessage = joinmessage.replace("{server}", `${member.guild.name}`);
+      joinmessage = joinmessage.replace("{memberCount}", `${member.guild.memberCount}`);
 
       let embed = new MessageEmbed()
         .setDescription(joinmessage)
