@@ -111,7 +111,7 @@
 - **Du kannst eine beliebige Kanal-ID für `ERROR_LOGS_CHANNEL` verwenden, aber der Bot muss auf dem Server sein, sonst kann der Bot keinen Fehler melden!!**
 - **Alle Fehler, mit denen dein Bot konfrontiert ist, werden in der `ERROR_LOGS_CHANNEL`**
 - **Der `MongoDB/ Pass` muss eine `URL` sein!**
-- **Besuch die Seit [MongoDB Website](https://mongodb.com), um deine `MongoDB/ Pass` zu bekommen.**
+- **Besuch die Seite [MongoDB Website](https://mongodb.com), um deine `MongoDB/ Pass` zu bekommen.**
 - **Schau dir dieses Video an `MongoDB/ Pass`:**
 
 [![MongoDB Tutorial](http://img.youtube.com/vi/pf-8KA8td88/0.jpg)](http://www.youtube.com/watch?v=pf-8KA8td88 "MongoDB Tutorial")
